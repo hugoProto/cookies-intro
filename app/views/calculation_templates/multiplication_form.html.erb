@@ -9,3 +9,11 @@
 
   <button>Multiply!</button>
 </form>
+
+<p>The past multiplication numbers is:
+<%= cookies.fetch(:mult_first) %>
+*
+<%= cookies.fetch(:mult_second) %>
+=
+<%= cookies.fetch(:mult_result) %>
+</p>

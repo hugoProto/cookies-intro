@@ -8,4 +8,12 @@
   <input type="text" id="second_field" name="second_num">
 
   <button>Subtract!</button>
-</form>
+  </form>
+
+  <p>Your previous subtraction was:
+  <%= cookies.fetch(:subtract_first) %>
+  -
+  <%= cookies.fetch(:subtract_second) %>
+  =
+  <%= cookies.fetch(:subtract_result) %>
+  </p>

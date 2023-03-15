@@ -21,6 +21,10 @@ class CalculationsController < ApplicationController
 
     @result = @first_number.to_f + @second_number.to_f
 
+    cookies.store(:addition_first, @first_number)
+    cookies.store(:addition_second, @second_number)
+    cookies.store(:addition_result, @result)
+
     render({ :template => "calculation_templates/add_results.html.erb" })
   end
 
@@ -29,6 +33,10 @@ class CalculationsController < ApplicationController
     @second_number = params.fetch("second_num").to_f
 
     @result =  @second_number.to_f - @first_number.to_f
+
+    cookies.store(:subtract_first, @first_number)
+    cookies.store(:subtract_second, @second_number)
+    cookies.store(:subtract_result, @result)
 
     render({ :template => "calculation_templates/subtract_results.html.erb" })
   end
@@ -39,6 +47,10 @@ class CalculationsController < ApplicationController
 
     @result =  @first_number.to_f * @second_number.to_f
 
+    cookies.store(:mult_first, @first_number)
+    cookies.store(:mult_second, @second_number)
+    cookies.store(:mult_result, @result)
+
     render({ :template => "calculation_templates/multiply_results.html.erb" })
   end
 
@@ -47,6 +59,10 @@ class CalculationsController < ApplicationController
     @second_number = params.fetch("second_num").to_f
 
     @result =  @first_number.to_f / @second_number.to_f
+
+    cookies.store(:div_first, @first_number)
+    cookies.store(:div_second, @second_number)
+    cookies.store(:div_result, @result)
 
     render({ :template => "calculation_templates/divide_results.html.erb" })
   end
